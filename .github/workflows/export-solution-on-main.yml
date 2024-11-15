@@ -30,7 +30,6 @@ env:
   # Folder name to be created and checked in.
   SOLUTION_TARGET_FOLDER: solutions
 permissions:
-  id-token: write
   contents: write
   
 jobs:
