@@ -32,7 +32,9 @@ env:
   CLIENT_ID: 'cf0a9535-04c6-434e-9945-050d8ec245a6'
   TENANT_ID: 'bae0df29-f66c-4ef1-8310-98419b0cab33'
 permissions:
+  id-token: write
   contents: write
+  
 jobs:
   export-from-dev:
     runs-on: ubuntu-latest
