@@ -29,9 +29,6 @@ env:
   SOLUTION_EXPORTED_FOLDER: out/exported
   # Folder name to be created and checked in.
   SOLUTION_TARGET_FOLDER: solutions
-permissions:
-  contents: write
-  
 jobs:
   export-from-dev:
     runs-on: ubuntu-latest
