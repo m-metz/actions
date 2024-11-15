@@ -18,6 +18,8 @@ on:
         # reference for re-usability.
         # https://github.com/actions/runner/issues/2907#issuecomment-2400200168
         default: 'Export - DEV Environment'
+permissions:
+  contents: write
 env:
   #edit your values here
   ENVIRONMENT_URL: 'https://mjmetzdev.crm3.dynamics.com'
