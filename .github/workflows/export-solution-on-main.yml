@@ -30,6 +30,7 @@ env:
   # Folder name for staging the exported solution
   SOLUTION_EXPORTED_FOLDER: out/exported
   # Folder name to be created and checked in.
+  # Don't leave blank. This is used with rm -rf.
   SOLUTION_TARGET_FOLDER: solutions
 jobs:
   export-from-dev:
@@ -78,9 +79,10 @@ jobs:
       # adds the files back.
       - name: Remove Old Solution
         run: |
-          # Don't need -f because it is safer (ex. variables not filled in) and they should all be owned
-          # and writable by the user.
-          rm -r ${{ env.SOLUTION_TARGET_FOLDER }}/${{ github.event.inputs.solution_name }}
+          # Need -f because we don't know if the folder will be there for new repositories.
+          # The input is required, so it should always be there, and the env variable should 
+          # be defined typically.
+          rm -rf ${{ env.SOLUTION_TARGET_FOLDER }}/${{ github.event.inputs.solution_name }}
   
       - name: unpack-solution action
         uses: microsoft/powerplatform-actions/unpack-solution@v1
